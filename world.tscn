@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://chl4obwbrgg2l"]
+
+[ext_resource type="MeshLibrary" uid="uid://diuoigy4l0dfa" path="res://tiles/tiles.tres" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://foll6xl5tryc" path="res://entities/player/player.tscn" id="2_fj7yv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_fj7yv"]
+sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
+
+[sub_resource type="Environment" id="Environment_tlwt5"]
+background_mode = 2
+sky = SubResource("Sky_fj7yv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="GDScript" id="GDScript_fj7yv"]
+script/source = "extends GridMap
+
+var noise := FastNoiseLite.new()
+
+func _ready() -> void:
+	noise.seed = randi()
+	noise.frequency = 0.02
+	noise.fractal_octaves = 3
+	
+	var size = Vector2i(128, 128)
+	var max_height = 8
+
+	for x in size.x:
+		for z in size.y:
+			var n = noise.get_noise_2d(x, z)
+			var height = int((n + 1.0) * 0.5 * max_height)
+			for y in height:
+				set_cell_item(Vector3i(x, y, z), 0)
+"
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tlwt5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_f3sb7")
+cell_size = Vector3(1, 0.5, 1)
+data = {
+"cells": PackedInt32Array(-3, 65533, 0, -2, 65533, 0, -1, 65533, 0, -65536, 65533, 0, -65535, 65533, 0, -65534, 65533, 0, -65534, 65534, 0, -65534, 65535, 0, -65534, 0, 0, -65534, 1, 0, -65534, 2, 0, -65535, 2, 0, -65536, 2, 0, -1, 2, 0, -2, 2, 0, -3, 2, 0, -3, 1, 0, -3, 0, 0, -3, 65535, 0, -3, 65534, 0, -2, 65534, 0, -1, 65534, 0, -65536, 65534, 0, -65535, 65534, 0, -65535, 65535, 0, -65535, 0, 0, -65535, 1, 0, -65536, 1, 0, -1, 1, 0, -2, 1, 0, -2, 0, 0, -2, 65535, 0, -1, 65535, 0, -65536, 65535, 0, -65536, 0, 0, -1, 0, 0, 65533, 65532, 0, 65534, 65532, 0, 65535, 65532, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 3, 65533, 0, 3, 65534, 0, 3, 65535, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 2, 3, 0, 1, 3, 0, 0, 3, 0, 65535, 3, 0, 65534, 3, 0, 65533, 3, 0, 65532, 3, 0, 65532, 2, 0, 65532, 1, 0, 65532, 0, 0, 65532, 65535, 0, 65532, 65534, 0, 65532, 65533, 0, 65532, 65532, 0)
+}
+script = SubResource("GDScript_fj7yv")
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49538, 0)

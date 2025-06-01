@@ -1,0 +1,15 @@
+[gd_resource type="MeshLibrary" load_steps=3 format=3 uid="uid://diuoigy4l0dfa"]
+
+[ext_resource type="ArrayMesh" uid="uid://cdpdnne74p4vs" path="res://tiles/dirt/dreck_Cube_001.res" id="1_rtq0s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rtq0s"]
+size = Vector3(1, 0.5, 1)
+
+[resource]
+item/0/name = "Dreck"
+item/0/mesh = ExtResource("1_rtq0s")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = [SubResource("BoxShape3D_rtq0s"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://foll6xl5tryc"]
+
+[ext_resource type="Script" uid="uid://yesvtwloc176" path="res://entities/player/player.gd" id="1_symyc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sfv1e"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_symyc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_symyc"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_symyc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_sfv1e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_symyc")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0.432166, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+shape = SubResource("SphereShape3D_symyc")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
