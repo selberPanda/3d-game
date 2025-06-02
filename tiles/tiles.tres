@@ -1,15 +1,70 @@
-[gd_resource type="MeshLibrary" load_steps=3 format=3 uid="uid://diuoigy4l0dfa"]
+[gd_resource type="MeshLibrary" load_steps=13 format=3 uid="uid://diuoigy4l0dfa"]
 
-[ext_resource type="ArrayMesh" uid="uid://bjj6c072lcron" path="res://tiles/dirt/dirt_Cube_001.res" id="1_rtq0s"]
+[ext_resource type="ArrayMesh" uid="uid://uu07jfou11f8" path="res://tiles/dirt/2-side/dirt_2-side_Cube_001.res" id="1_iys3i"]
+[ext_resource type="ArrayMesh" uid="uid://dwlxyicmuoq8" path="res://tiles/dirt/3-side/dirt_3-side_Cube_001.res" id="2_tba8i"]
+[ext_resource type="ArrayMesh" uid="uid://l7j71x55n8gh" path="res://tiles/dirt/4-side/dirt_4-side_Cube_001.res" id="3_ks5ln"]
+[ext_resource type="ArrayMesh" uid="uid://daufnjc56y0ji" path="res://tiles/dirt/corner/dirt_corner_Cube_001.res" id="4_mtmuf"]
+[ext_resource type="ArrayMesh" uid="uid://csarrecct1l1n" path="res://tiles/dirt/full/dirt_full_Cube_001.res" id="5_wu2xg"]
+[ext_resource type="ArrayMesh" uid="uid://dm3e2w8o5uvtb" path="res://tiles/dirt/side/dirt_side_Cube_001.res" id="6_stgsu"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rtq0s"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_iys3i"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tba8i"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ks5ln"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mtmuf"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wu2xg"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_stgsu"]
 size = Vector3(1, 0.5, 1)
 
 [resource]
-item/0/name = "Dirt"
-item/0/mesh = ExtResource("1_rtq0s")
+item/0/name = "dirt_2-side"
+item/0/mesh = ExtResource("1_iys3i")
 item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/mesh_cast_shadow = 1
-item/0/shapes = [SubResource("BoxShape3D_rtq0s"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/0/shapes = [SubResource("BoxShape3D_iys3i"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/navigation_layers = 1
+item/1/name = "dirt_3-side"
+item/1/mesh = ExtResource("2_tba8i")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = [SubResource("BoxShape3D_tba8i"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
+item/2/name = "dirt_4-side"
+item/2/mesh = ExtResource("3_ks5ln")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/mesh_cast_shadow = 1
+item/2/shapes = [SubResource("BoxShape3D_ks5ln"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = "dirt_corner"
+item/3/mesh = ExtResource("4_mtmuf")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/mesh_cast_shadow = 1
+item/3/shapes = [SubResource("BoxShape3D_mtmuf"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
+item/4/name = "dirt_full"
+item/4/mesh = ExtResource("5_wu2xg")
+item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/mesh_cast_shadow = 1
+item/4/shapes = [SubResource("BoxShape3D_wu2xg"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/navigation_layers = 1
+item/5/name = "dirt_side"
+item/5/mesh = ExtResource("6_stgsu")
+item/5/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/mesh_cast_shadow = 1
+item/5/shapes = [SubResource("BoxShape3D_stgsu"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
+item/5/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/navigation_layers = 1

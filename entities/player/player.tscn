@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://yesvtwloc176" path="res://entities/player/player.gd" id="1_symyc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sfv1e"]
+radius = 0.45
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_symyc"]
+radius = 0.45
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_symyc"]
 

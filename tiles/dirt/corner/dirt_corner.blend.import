@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdw7dbvvbvr0y"
-path="res://.godot/imported/dirt.blend-25dd1710fa1afb51d49e1ab6c0d44a7c.scn"
+uid="uid://bpm4eigjfd6kv"
+path="res://.godot/imported/dirt_corner.blend-4430c37f01087c0ad0f49c92cc1c2cdd.scn"
 
 [deps]
 
-source_file="res://tiles/dirt/dirt.blend"
-dest_files=["res://.godot/imported/dirt.blend-25dd1710fa1afb51d49e1ab6c0d44a7c.scn"]
+source_file="res://tiles/dirt/corner/dirt_corner.blend"
+dest_files=["res://.godot/imported/dirt_corner.blend-4430c37f01087c0ad0f49c92cc1c2cdd.scn"]
 
 [params]
 
@@ -34,13 +34,13 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"dirt_Cube_001": {
+"dirt_corner_Cube_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://tiles/dirt/dirt_Cube_001.res"
+"save_to_file/path": "res://tiles/dirt/corner/dirt_corner_Cube_001.res"
 }
 }
 }
